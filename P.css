@@ -811,7 +811,12 @@ box-shadow: 10px 10px 15px rgba(94, 92, 92, 0.3);
 .product-info button:hover {
     background-color: #45a049;
 }
-  
+  .website-info {
+        flex-direction: column;
+        text-align: center;
+				font-size: 5vw;
+
+    }
 .website-info {
     display: flex;
     justify-content: space-between;
@@ -821,9 +826,11 @@ box-shadow: 10px 10px 15px rgba(94, 92, 92, 0.3);
     margin-bottom: 4vw;
     border-radius: 0.4vw;
     box-shadow: 0 0.2vw 0.3vw rgba(0, 0, 0, 0.1);
+	gap: 1vw;
 }
 
-
+.website-text {
+flex: 1;}
 
 .website-text h2 {
     font-size: 2.5vw;
@@ -837,6 +844,16 @@ box-shadow: 10px 10px 15px rgba(94, 92, 92, 0.3);
 	font-style: italic;
 }
 
+.website-image {
+    flex: 1;
+    max-width: 30vw; /* Limits the image width */
+}
+
+.website-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
 
 .website-image img {
     width: 30vw;
@@ -1013,7 +1030,17 @@ box-shadow: 10px 10px 15px rgba(94, 92, 92, 0.3);
 @media (max-width: 768px) {
     /* mobile */
     header {
-        flex-direction: column;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2vw;
+    }
+	
+	.logo-box {
+        display: flex;
+        align-items: center;
+        gap: 2vw; /* Space between logo and text */
     }
 
     .logo-box img {
@@ -1022,9 +1049,18 @@ box-shadow: 10px 10px 15px rgba(94, 92, 92, 0.3);
     }
 
     nav ul {
-        justify-content: center;
+        /*justify-content: center;*/
         flex-wrap: wrap;
-        padding: 0;
+		list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        padding: 0.5vw;
+        background-color: #4682B4;
+    }
+	
+	.header-title {
+        display: flex;
+        flex-direction: column;
     }
 
     .header-title h1 {
@@ -1105,6 +1141,11 @@ box-shadow: 10px 10px 15px rgba(94, 92, 92, 0.3);
     transform: scale(1.05); 
 }
 
+#categories h2 {
+    font-size: 3.5vw;
+    margin-top: 1vw;	
+}
+
 .category-box h3 {
     font-size: 2.6vw;
     color: #333;
@@ -1140,6 +1181,11 @@ box-shadow: 10px 10px 15px rgba(94, 92, 92, 0.3);
     margin-top: 1vw;
 }
 
+.offersHome h2 {
+    font-size: 3.5vw;
+    margin-top: 1vw;
+}
+
 .offerHome p {
     font-size: 2vw;
     color: #666;
@@ -1160,7 +1206,15 @@ box-shadow: 10px 10px 15px rgba(94, 92, 92, 0.3);
         height: 12vw;
         margin-bottom: 1vw;
     }
+	
+	.reviews h2{
+    font-size: 3.5vw;
+    margin-top: 1vw;		
+	}
 
+	.review-content h3{
+		font-size: 2.5vw;
+	}
     /* Footer */
     .footer-container {
         display: flex;
@@ -1177,11 +1231,24 @@ box-shadow: 10px 10px 15px rgba(94, 92, 92, 0.3);
   /* Show dropdown button for mobile */
   .dropdown {
     display: block;
+	position: relative;
     width: 100%;
+	background-color: #4682B4;
+        color: #fff;
+        font-size: 4vw;
+        padding: 1vw 2vw;
+        border: none;
+        border-radius: 0.5vw;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  }
+  
+  .dark-mode .dropdown {
+	  background-color: #1a1a1a;
   }
 
   .dropdown-content {
-    position: static;
+    position: absolute;
     display: none;
     width: 100%;
   }
@@ -1190,14 +1257,116 @@ box-shadow: 10px 10px 15px rgba(94, 92, 92, 0.3);
     width: 100%;
     text-align: left;
   }
+  
+  .dropdown-button:hover {
+        background-color: #808080;
+    }
 
   .dropdown:hover .dropdown-content {
     display: block;
   }
   
+  
+  
   .ogNav{
 	  display: none;
   }
+  
+  .footer-container {
+        grid-template-columns: 1fr; /* Stack sections vertically */
+        text-align: center;
+    }
+
+    .contact {
+        align-items: center;
+        text-align: center;
+    }
+
+    .social-media {
+        text-align: center;
+        margin-top: 1vw;
+    }
+
+    .footer-icons {
+        justify-content: center;
+        gap: 3vw; /* Increase spacing for better alignment */
+    }
+
+    .contact p, .contact a, .social-media h2, .copyright {
+        font-size: 2.5vw; /* Further reduced for smaller screens */
+    }
+
+    .footer-icons a {
+        font-size: 2.5vw; /* Adjust icon size */
+    }
+	
+	footer {
+    background-color: #4682B4;
+    color: white;
+    padding: 2vw;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    align-items: center;
+    margin-bottom: 2vw;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact p {
+    margin: 0.2vw 0;
+    font-size: 1.8vw; /* Reduced size */
+}
+
+.contact a {
+    color: #f0e68c; 
+    text-decoration: none;
+    font-size: 1.8vw; /* Reduced size */
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+.social-media {
+    text-align: right;
+}
+
+.social-media h2 {
+    font-size: 2.2vw; /* Reduced size */
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5vw;
+    margin-top: 1vw;
+}
+
+.footer-icons a {
+    color: white;
+    font-size: 2vw; /* Slightly reduced */
+    transition: color 0.3s;
+}
+
+.footer-icons a:hover {
+    color: #FFD700; 
+}
+
+.copyright {
+    text-align: center;
+    border-top: 0.2vw solid white;
+    padding-top: 1vw;
+    margin-top: 1vw;
+    font-size: 1.8vw; /* Reduced size */
+}
+  
 }
 	
 
@@ -1216,10 +1385,13 @@ box-shadow: 10px 10px 15px rgba(94, 92, 92, 0.3);
         text-align: left;
     }
 	.website-image img {
-    width: 40vw;
+    width: 100%;
     height: auto;
     border-radius: 0.4vw;
 }
+.website-image {
+        max-width: 80%;
+    }
     .review {
         flex-direction: row;
         align-items: flex-start;
@@ -1229,8 +1401,17 @@ box-shadow: 10px 10px 15px rgba(94, 92, 92, 0.3);
     color: #555;
 	font-style: italic;
 }
+
+.website-text h2{
+	font-size: 3vw;
+}
 	.offerHome h3 {
     font-size: 2vw;
+    margin-top: 1vw;
+}
+
+.offersHome h2 {
+    font-size: 3vw;
     margin-top: 1vw;
 }
 
@@ -1244,11 +1425,28 @@ box-shadow: 10px 10px 15px rgba(94, 92, 92, 0.3);
     color: #333;
     margin-top: 1vw;
 }
+
+	.reviews h2{
+    font-size: 3vw;
+    margin-top: 1vw;		
+	}
+
+#categories h2 {
+    font-size: 3vw;
+    margin-top: 1vw;	
+}
     footer {
         text-align: left;
     }
 }  
 @media (min-width: 1024px) {
+	
+	.website-info {
+		
+        flex-direction: row;
+        text-align: left;
+    }
+	
     header {
         flex-direction: row;
     }
@@ -1350,7 +1548,7 @@ nav ul li button.dark-mode-button {
 }
 
 .dropdown-button {
-  background-color: #4CAF50;
+  background-color: #666;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -1433,12 +1631,12 @@ body.dark-mode {
 }
 
 body.dark-mode .dark-mode-button {
-    background-color: #777;
-    color: #222;
+    background-color: #555;
+    color: #fff;
 }
 
 body.dark-mode .dark-mode-button:hover {
-    background-color: #555;
+    background-color: #777;
 }
 /*
 .dark-mode .product, 
