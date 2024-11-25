@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="P.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Ensure the skip link is visible when focused */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background-color: #005fcc;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            text-decoration: none;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
+
+</head>
+<body>
+
+    
+    
+    <header>
+        <div class="header-top">
+            <div class="logo-box">
+                <img src="images/logo.jpeg" alt="Logo">    
+                <div class="header-title">
+                    <h1>GOODS</h1> 
+                    <p><a href="HomePage.html">Home</a> </p> 
+                </div>
+            </div>
+        </div>
+		
+			<nav class = "ogNav">
+				<ul>
+					<li><a href="UserPage.html">User Page</a></li>
+					<li><a href="SellerDashboard.html">Seller Page</a></li>
+					<li><a href="Toy.html">Toys Page</a></li>
+					<li><a href="Clothes.html">Clothes Page</a></li>
+					<li><a href="electronics.html">Electronics Page</a></li>
+					<li><a href="Cart.html">Cart</a></li>
+					<li><button id="dark-mode-toggle" class="dark-mode-button" onclick="toggleDarkMode()">Customize Button</button></li>
+				</ul>	
+			</nav>
+			
+		<!-- Navigation Bar with More Dropdown for Mobile -->
+		<nav class="navbar">
+			<ul class="nav-list">
+				
+				<li class="dropdown">
+					<button class="dropdown-button">More</button>
+					<div class="dropdown-content">
+						<button class="dropdown-item" onclick="navigateTo('user-page')">User Page</button>
+						<button class="dropdown-item" onclick="navigateTo('seller-page')">Seller Page</button>
+						<button class="dropdown-item" onclick="navigateTo('toys-page')">Toys Page</button>
+						<button class="dropdown-item" onclick="navigateTo('clothes-page')">Clothes Page</button>
+						<button class="dropdown-item" onclick="navigateTo('electronics-page')">Electronics Page</button>
+						<button class="dropdown-item" onclick="navigateTo('cart')">Cart</button>
+						<button class="dropdown-item" onclick="toggleDarkMode()">Dark Mode</button>
+					</div>
+				</li>
+			</ul>
+		</nav>
+
+		 
+    </header>
+	<p class="current-week"></p>
+    <!-- Main Content Section -->
+    <main>
+	
+		<!-- Website Name and Vision Section -->
+		<section class="website-info">
+        <div class="website-text" id="main-content">
+            <h2>Goods</h2>
+            <p>At Goods, our vision is to create an online shopping experience that transcends the traditional boundaries of e-commerce by putting the customer at the heart of every decision we make. We aim to build a platform that not only offers high-quality products but also fosters a community of enthusiastic buyers and sellers who share a passion for excellence, innovation, and seamless online experiences.</p>
+        </div>
+        <div class="website-image">
+            <img src="images/intro.webp" alt="Website Vision Image">
+        </div>
+		</section>
+		
+		<section id="categories">
+			<h2>Categories</h2>
+			<div class="category-grid">
+				<div class="category-box">
+					<a id="category1" href="Toy.html">
+						<img src="images/toysHome.jpg" alt="category 1">
+					</a>
+					<h3>Toys</h3>
+				</div>
+				<div class="category-box">
+					<a id="category2" href="Clothes.html">
+						<img src="images/clothesHome.jpg" alt="category 2">
+					</a>
+					<h3>Clothes</h3>
+				</div>
+				<div class="category-box">
+					<a id="category3" href="electronics.html">
+						<img src="images/electronicsHome.jpg" alt="category 3">
+					</a>
+					<h3>Electronics</h3>
+				</div>
+			</div>
+		</section>
+	
+	
+	
+	
+        <section class="offersHome">
+            <h2>Our Top Offers</h2>
+            <div class="offerHome-grid">
+			
+                <div class="offerHome">
+                    <img src="images/4.png" alt="Offer 1">
+                    <h3>Kids Toys Discount</h3>
+                    <p>Special prices on fun and educational toys!</p>
+                </div>
+                <div class="offerHome">
+                    <img src="images/3.png" alt="Offer 2">
+                    <h3>New Arrivals</h3>
+                    <p>Check out our latest products today!</p>
+                </div>
+                <div class="offerHome">
+                    <img src="images/6.png" alt="Offer 3">
+                    <h3>Seasonal Sales</h3>
+                    <p>Huge discounts on seasonal clothes.</p>
+                </div>
+				
+				
+				<button id="moreOffersBtn" onclick="showMoreOffers()">More</button>
+				
+				
+                <div class="offerHome additional-offer" style="display: none;">
+                    <img src="images/1.png" alt="Offer 4">
+                    <h3>Free Delivery</h3>
+                    <p>On all orders above $50!</p>
+                </div>
+                <div class="offerHome additional-offer" style="display: none;">
+                    <img src="images/5.png" alt="Offer 5">
+                    <h3>Exclusive Pieces</h3>
+                    <p>Browse through the website and find our most exclusive pieces!</p>
+                </div>
+                <div class="offerHome additional-offer" style="display: none;">
+                    <img src="images/2.png" alt="Offer 6">
+                    <h3>Big Sales!</h3>
+                    <p>Check out our latest sales!</p>
+                </div>
+            </div>
+			
+        </section>
+		
+		<div class="reviews">
+			<h2>Customer Reviews</h2>
+			<div class="review-grid">
+				<div class="review">
+					<img src="images/ElectronicsReview.jpg" alt="Product photo by customer">
+					<div class="review-content">
+                        <h3>Smartphone</h3>
+						<h3>★★★★☆</h3>
+						<p>The best purchase I've ever made!</p>
+						<p class="reviewer-name">- John Doe</p>
+					</div>
+				</div>
+
+				<div class="review">
+					<img src="images/ClothesReview.jpg" alt="Product photo by customer">
+					<div class="review-content">
+                        <h3>Classic Blue Jeans</h3>
+						<h3>★★★☆☆</h3>
+						<p>These products made a huge difference in my styling!</p>
+						<p class="reviewer-name">- Jane Smith</p>
+					</div>
+				</div>
+				<div class="review">
+					<img src="images/ToysReview.jpg" alt="Product photo by customer">
+					<div class="review-content">
+                        <h3>Building Blocks</h3>
+						<h3>★★★☆☆</h3>
+						<p>My kids love these toys, perfect for all ages.</p>
+						<p class="reviewer-name">- Sarah Johnson</p>
+					</div>
+				</div>
+			</div>
+		</div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="contact">
+                <p>Contact us:</p>
+                <p><a href="mailto:goodsonlineshopping@gmail.com">Email</a></p>
+                <p>Telephone: +966 0508833221</p>
+            </div>
+
+            <div class="social-media">
+                <h2>Follow us on social media</h2>
+                <div class="footer-icons">
+                    <a href="https://www.facebook.com" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2024 All Rights Reserved.</p>
+        </div>
+    </footer>
+	<script src="Scrip.js"></script>
+</body>
+</html>

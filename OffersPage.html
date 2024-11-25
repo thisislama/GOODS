@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GOODS Website</title>
+    <link rel="stylesheet" href="P.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="manageOffers.js"></script>
+</head>
+
+<body onload="addOffer();">
+
+    <header>
+        <div class="header-top">
+            <div class="logo-box">
+                <img src="images/logo.jpeg" alt="Logo">
+                <div class="header-title">
+                    <h1>GOODS</h1>
+                    <p>
+                        <a href="HomePage.html">Home</a> /
+                        <a href="SellerDashBoard.html">Seller dashboard</a> /
+                        <a href="OffersPage.html">Offers Page</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="UserPage.html">User Page</a></li>
+                <li><a href="SellerDashBoard.html">Seller Page</a></li>
+                <li><a href="Toy.html">Toys Page</a></li>
+                <li><a href="Clothes.html">Clothes Page</a></li>
+                <li><a href="electronics.html">Electronics Page</a></li>
+                <li><a href="Cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <br>
+        <h1 style="text-align: center;">Offers Page</h1>
+
+        <fieldset class="custom-fieldset">
+            <legend>Add New Offer</legend>
+            <ul class="form-list">
+                <li>
+                    <label>Product Name: <input type="text" name="productname" class="input-field"></label>
+                </li>
+                <li>
+                    <label>Description: <input type="text" name="description" class="input-field large-input"></label>
+                </li>
+            </ul>
+
+            <p>Insert Photo:</p>
+            <input type="file">
+
+            <div id="add-offer">
+                <input type="submit" id="Add-Offer" onclick="addOffer();">
+            </div>
+        </fieldset>
+
+        <section class="offer-list">
+            <div class="offer">
+                <input type="checkbox" class="delete-cb">
+                <img src="images/offer1.jpeg" alt="Offer Photo">
+                <div class="offer-details">
+                    <h3>V-neck Solid</h3>
+                    <p>Asymmetrical Button Vest with long strip extending downwards, giving it a contemporary, stylish look</p>
+                </div>
+            </div>
+
+            <div class="offer">
+                <input type="checkbox" class="delete-cb">
+                <img src="images/offer2.jpeg" alt="Offer Photo">
+                <div class="offer-details">
+                    <h3>Collar V-neck Crop Vest</h3>
+                    <p>The Vest features a stylish design with a wide collar and prominent shoulders.</p>
+                </div>
+            </div>
+
+            <div class="offer">
+                <input type="checkbox" class="delete-cb">
+                <img src="images/offer9.jpg" alt="Offer Photo">
+                <div class="offer-details">
+                    <h3>Gray Pants</h3>
+                    <p>Stylish and comfortable gray pants, suitable for all body types. Easily coordinated with different outfits.</p>
+                </div>
+            </div>
+
+            <div class="offer">
+                <input type="checkbox" class="delete-cb">
+                <img src="images/offer4.jpg" alt="Offer Photo">
+                <div class="offer-details">
+                    <h3>Hair Styling Comb</h3>
+                    <p>A versatile heated comb for easy hair styling, suitable for straightening or adding soft waves. Perfect for everyday use to achieve a polished look.</p>
+                </div>
+            </div>
+
+            <div class="offer">
+                <input type="checkbox" class="delete-cb">
+                <img src="images/offer5.jpg" alt="Offer Photo">
+                <div class="offer-details">
+                    <h3>Professional Hair Dryer</h3>
+                    <p>A hair dryer with multiple attachments to adjust airflow and distribution, helping to dry hair quickly while maintaining its health and shine.</p>
+                </div>
+            </div>
+
+            <div class="offer">
+                <input type="checkbox" class="delete-cb">
+                <img src="images/offer6.jpg" alt="Offer Photo">
+                <div class="offer-details">
+                    <h3>Educational Building Blocks</h3>
+                    <p>A colorful block set designed to develop children’s skills in building and creative thinking. Ideal for promoting interaction and fun.</p>
+                </div>
+            </div>
+
+            <div class="offer">
+                <input type="checkbox" class="delete-cb">
+                <img src="images/offer8.jpg" alt="Offer Photo">
+                <div class="offer-details">
+                    <h3>Wire Challenge Game</h3>
+                    <p>An exciting wooden game where two players compete to push small pieces along a wire without touching the base. It adds a fun challenge.</p>
+                </div>
+            </div>
+
+            <div class="offer">
+                <input type="checkbox" class="delete-cb">
+                <img src="images/offer7.jpg" alt="Offer Photo">
+                <div class="offer-details">
+                    <h3>Jaccaru Game</h3>
+                    <p>A traditional game that combines luck and skill, where players compete to get their pieces to the end.</p>
+                </div>
+            </div>
+        </section>
+
+        <div id="delete-offer">
+            <input type="submit" value="Delete Offer">
+        </div>
+        <br>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="contact">
+                <p>Contact us:</p>
+                <p><a href="mailto:goodsonlineshopping@gmail.com">Email</a></p>
+                <p>Telephone: +966 0508833221</p>
+            </div>
+
+            <div class="social-media">
+                <h2>Follow us on social media</h2>
+                <div class="footer-icons">
+                    <a href="https://www.facebook.com" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2024 All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="Scrip.js"></script>
+
+</body>
+</html>

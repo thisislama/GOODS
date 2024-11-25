@@ -1,0 +1,271 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head> 
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Clothing</title>
+		<link rel="stylesheet" href="P.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	</head>
+	<body data-category="clothing">
+
+		<header>
+			<div class="header-top">
+				<div class="logo-box">
+					<img src="images/logo.jpeg" alt="Logo"> 
+					<div class="header-title">
+						<h1>GOODS</h1> 
+						<p><a href="HomePage.html">Home</a> / <a href="Clothing.html">Clothing</a></p> 
+					</div>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="UserPage.html">User Page</a></li>
+					<li><a href="SellerDashboard.html">Seller Page</a></li>
+					<li><a href="Toy.html">Toys Page</a></li>
+					<li><a href="Clothes.html">Clothes Page</a></li>
+					<li><a href="Electronics.html">Electronics Page</a></li>
+					<li><a href="Cart.html">Cart</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="banner">
+			<img src="images/clothes.png" alt="Banner Image"> 
+		</div>
+
+		<section class="product-list">
+			<h2>All Products</h2>
+			
+			<div class="sort-by">
+				<label for="sort-options">Sort By:</label>
+				<select id="sort-options" onchange="sortProducts()">
+					<optgroup label="Price">
+						<option value="high-to-low">High to Low</option>
+						<option value="low-to-high">Low to High</option>
+					</optgroup>
+					<optgroup label="Name">
+						<option value="a-to-z">A-Z</option>
+						<option value="z-to-a">Z-A</option>
+					</optgroup>
+				</select>
+			</div>
+			
+			<div class="product-grid">
+				<!-- List of cloth products -->
+			   <div class="product" data-id="1" data-name="Shoes" data-price="59.99">
+		<img src="images/Shoes.webp" alt="Shoes">
+		<div class="product-info">
+			<h3>Running Shoes</h3>
+		  <p class="price">$59.99</p>
+			<p>Comfortable and lightweight running shoes designed for all types of workouts.</p>
+			<div class="quantity-controls">
+				<button onclick="decrementQuantity(this)">-</button>
+				<span class="quantity">1</span>
+				<button onclick="incrementQuantity(this)">+</button>
+			</div>
+			<button onclick="addToCart(this)">Add to Cart</button>
+		</div>
+	</div>
+
+	<div class="product" data-id="2" data-name="Jeans" data-price="49.99">
+		<img src="images/jeans.webp" alt="Jeans">
+		<div class="product-info">
+			<h3>Jeans</h3>
+		  <p class="price">$49.99</p>
+			<p>Classic denim jeans perfect for any casual occasion. Available in multiple sizes.</p>
+			<div class="quantity-controls">
+				<button onclick="decrementQuantity(this)">-</button>
+				<span class="quantity">1</span>
+				<button onclick="incrementQuantity(this)">+</button>
+			</div>
+			<button onclick="addToCart(this)">Add to Cart</button>
+		</div>
+	</div>
+
+	<div class="product" data-id="3" data-name="Sweater" data-price="39.99">
+		<img src="images/sweater.webp" alt="Sweater">
+		<div class="product-info">
+			<h3>Sweater</h3>
+		  <p class="price">$39.99</p>
+			<p>Soft and warm sweater, perfect for chilly weather. Available in various colors.</p>
+			<div class="quantity-controls">
+				<button onclick="decrementQuantity(this)">-</button>
+				<span class="quantity">1</span>
+				<button onclick="incrementQuantity(this)">+</button>
+			</div>
+			<button onclick="addToCart(this)">Add to Cart</button>
+		</div>
+	</div>
+
+	<div class="product" data-id="4" data-name="Jacket" data-price="99.99">
+		<img src="images/jacket.webp" alt="Jacket">
+		<div class="product-info">
+			<h3>Jacket</h3>
+		  <p class="price">$99.99</p>
+			<p>Stylish and warm jacket, perfect for cold weather and outdoor activities.</p>
+			<div class="quantity-controls">
+				<button onclick="decrementQuantity(this)">-</button>
+				<span class="quantity">1</span>
+				<button onclick="incrementQuantity(this)">+</button>
+			</div>
+			<button onclick="addToCart(this)">Add to Cart</button>
+		</div>
+	</div>
+
+	<div class="product" data-id="5" data-name="Dress" data-price="79.99">
+		<img src="images/dress.webp" alt="Dress">
+		<div class="product-info">
+			<h3>Dress</h3>
+		  <p class="price">$79.99</p>
+			<p>Elegant and stylish dress, perfect for formal events and parties.</p>
+			<div class="quantity-controls">
+				<button onclick="decrementQuantity(this)">-</button>
+				<span class="quantity">1</span>
+				<button onclick="incrementQuantity(this)">+</button>
+			</div>
+			<button onclick="addToCart(this)">Add to Cart</button>
+		</div>
+	</div>
+
+	<div class="product" data-id="6" data-name="Shorts" data-price="29.99">
+		<img src="images/shorts.webp" alt="Shorts">
+		<div class="product-info">
+			<h3>Shorts</h3>
+		  <p class="price">$29.99</p>
+			<p>Comfortable and breathable shorts, ideal for warm weather and casual outings.</p>
+			<div class="quantity-controls">
+				<button onclick="decrementQuantity(this)">-</button>
+				<span class="quantity">1</span>
+				<button onclick="incrementQuantity(this)">+</button>
+			</div>
+			<button onclick="addToCart(this)">Add to Cart</button>
+		</div>
+	</div>
+
+	<div class="product" data-id="7" data-name="Scarf" data-price="29.99">
+		<img src="images/Scarf.webp" alt="Scarf">
+		<div class="product-info">
+			<h3>Silk Scarf</h3>
+		  <p class="price">$29.99</p>
+			<p>Elegant and soft silk scarf, perfect for adding a touch of style to any outfit.</p>
+			<div class="quantity-controls">
+				<button onclick="decrementQuantity(this)">-</button>
+				<span class="quantity">1</span>
+				<button onclick="incrementQuantity(this)">+</button>
+			</div>
+			<button onclick="addToCart(this)">Add to Cart</button>
+		</div>
+	</div>
+
+	<div class="product" data-id="8" data-name="Blazer" data-price="89.99">
+		<img src="images/blazer.webp" alt="Blouse">
+		<div class="product-info">
+			<h3>Business Blazer</h3>
+			  <p class="price">$89.99</p>
+			<p>Tailored business blazer for a sharp and professional look.</p>
+			<div class="quantity-controls">
+				<button onclick="decrementQuantity(this)">-</button>
+				<span class="quantity">1</span>
+				<button onclick="incrementQuantity(this)">+</button>
+			</div>
+			<button onclick="addToCart(this)">Add to Cart</button>
+		</div>
+	</div>
+
+	<div class="product" data-id="9" data-name="Shirt" data-price="34.99">
+		<img src="images/shirt.webp" alt="Shirt">
+		<div class="product-info">
+			<h3>Shirt</h3>
+			  <p class="price">$34.99</p>
+			<p>Casual button-up shirt, perfect for everyday wear and versatile outfits.</p>
+			<div class="quantity-controls">
+				<button onclick="decrementQuantity(this)">-</button>
+				<span class="quantity">1</span>
+				<button onclick="incrementQuantity(this)">+</button>
+			</div>
+			<button onclick="addToCart(this)">Add to Cart</button>
+		</div>
+	</div>
+
+	<div class="product" data-id="10" data-name="Hat" data-price="15.99">
+		<img src="images/hat.webp" alt="Hat">
+		<div class="product-info">
+			<h3>Sun Hat</h3>
+			  <p class="price">$15.99</p>
+			<p>Stylish sun hat to keep you cool and protected during the summer.</p>
+			<div class="quantity-controls">
+				<button onclick="decrementQuantity(this)">-</button>
+				<span class="quantity">1</span>
+				<button onclick="incrementQuantity(this)">+</button>
+			</div>
+			<button onclick="addToCart(this)">Add to Cart</button>
+		</div>
+	</div>
+
+	<div class="product" data-id="11" data-name="Coat" data-price="129.99">
+		<img src="images/coat.webp" alt="Tunic">
+		<div class="product-info">
+			<h3>Winter Coat</h3>
+		  <p class="price">$129.99</p>
+			<p>Warm and stylish winter coat, perfect for cold climates and outdoor adventures.</p>
+			<div class="quantity-controls">
+				<button onclick="decrementQuantity(this)">-</button>
+				<span class="quantity">1</span>
+				<button onclick="incrementQuantity(this)">+</button>
+			</div>
+			<button onclick="addToCart(this)">Add to Cart</button>
+		</div>
+	</div>
+
+	<div class="product" data-id="12" data-name="Sunglasses" data-price="39.99">
+		<img src="images/sunglasses.webp" alt="Sunglasses">
+		<div class="product-info">
+			<h3>Sunglasses</h3>
+		  <p class="price">$39.99</p>
+			<p>Trendy sunglasses to protect your eyes from the sun while looking stylish.</p>
+			<div class="quantity-controls">
+				<button onclick="decrementQuantity(this)">-</button>
+				<span class="quantity">1</span>
+				<button onclick="incrementQuantity(this)">+</button>
+			</div>
+			<button onclick="addToCart(this)">Add to Cart</button>
+		</div>
+	</div>
+
+			</div>
+		</section>
+
+	   <footer>
+		<div class="footer-container">
+			<div class="contact">
+				<p>Contact us:</p>
+				<p><a href="mailto:goodsonlineshopping@gmail.com">Email</a></p>
+				<p>Telephone: +966 0508833221</p>
+			</div>
+
+			<div class="social-media">
+				<h2>Follow us on social media</h2>
+				<div class="footer-icons">
+					<a href="https://www.facebook.com" target="_blank">
+						<i class="fab fa-facebook"></i>
+					</a>
+					<a href="https://www.instagram.com" target="_blank">
+						<i class="fab fa-instagram"></i>
+					</a>
+					<a href="https://www.youtube.com" target="_blank">
+						<i class="fab fa-youtube"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="copyright">
+			<p>&copy;2024 All Rights Reserved.</p>
+		</div>
+	</footer>
+	<script src="ca.js"></script>
+
+	</body>
+	</html>

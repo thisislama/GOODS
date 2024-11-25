@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head >
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Page</title>
+        <link rel="stylesheet" href="P.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+          .star{
+            font-size:1.5rem;
+            color:#ff9800;
+            background-color: unset;
+            border:none;
+          }
+          .star:hover{
+          cursor: pointer;
+          }
+          .star-rating {
+              position: relative;
+              top: 0;
+              right: 0;
+              margin-left: 77%;
+              width: 200px; /* Adjust size as needed */
+              height: auto;
+              box-shadow: none; /* Removes shadow */
+              padding-right: 0%;
+              padding-top: 0%;
+              user-select: none;
+           }
+    
+    .filled {
+        color: gold; /* Color for filled stars */
+    }
+    .empty {
+        color: gray; /* Color for empty stars */
+    }
+        </style>
+        <script>
+
+var current_star_level=0;
+
+function StarR() {
+    var allStars = document.querySelectorAll('.star');
+
+    for (let i = 0; i < allStars.length; i++) {
+        allStars[i].onclick = function (event) {
+            event.preventDefault();
+
+            current_star_level = i + 1;
+
+            for (let j = 0; j < allStars.length; j++) {
+                if (current_star_level >= j + 1) {
+                    allStars[j].innerHTML = '&#9733'; // Filled star
+                    allStars[j].classList.add('filled'); // Apply filled styling
+                    allStars[j].classList.remove('empty'); // Remove empty styling
+                } else {
+                    allStars[j].innerHTML = '&#9734'; // Empty star
+                    allStars[j].classList.add('empty'); // Apply empty styling
+                    allStars[j].classList.remove('filled'); // Remove filled styling
+                }
+            }
+        };
+    }
+
+    console.log(current_star_level);
+    return current_star_level;
+};
+
+
+        function getSelectedV() {
+             // Get the select elements
+             var selectOrderElement = document.getElementById("selectOrder");
+             var productSelectElement = document.getElementById("selectProduct");
+ 
+             // Get the values of the select elements
+             var selectOrder = selectOrderElement ? selectOrderElement.value : "";
+             var productSelect = productSelectElement ? productSelectElement.value : "";
+
+             if (selectOrder) {
+                document.getElementById("ON").innerHTML = `Order Number: ${selectOrder}`;
+              }
+              if (productSelect) {
+                document.getElementById("PN").innerHTML = `Name:${productSelect}`;
+                if(productSelect=='Car toy')
+                {document.getElementById("price").innerHTML = `Price:500`;
+                document.getElementById("img").src = `images/Car-toy.jpg`;}
+               else if(productSelect=='Sunglasses'){
+                document.getElementById("price").innerHTML = `Price:45`;
+                document.getElementById("img").src = `images/sunglasses.webp`;}
+               else if(productSelect=='Toaster'){
+                document.getElementById("price").innerHTML = `Price:280`;
+                document.getElementById("img").src = `images/Toaster.webp`;}
+               else if(productSelect=='Shoes'){
+                document.getElementById("price").innerHTML = `Price:430`;
+                document.getElementById("img").src = `images/shoes.webp`;}
+               else if(productSelect=='blue T-shirt'){
+                document.getElementById("price").innerHTML = `Price:70`;
+                document.getElementById("img").src = `images/t-shirt.webp`;}
+            
+            
+
+
+    
+              }
+
+ 
+            var buttom1 = document.getElementById("buttom1");
+
+        
+            if (buttom1) {
+                buttom1.onclick = function () {
+                   
+                    console.log("Selected Order:", selectOrder);
+                    console.log("Selected Product:", productSelect);
+        
+                    // Ensure dropdowns are selected properly
+                    if (selectOrder === "" && productSelect === "") {
+                        alert("You must select both an order and a product before submitting your feedback.");
+                        return;
+                    }
+        
+                    if (selectOrder === "") {
+                        alert("You must select an order before submitting your feedback.");
+                        return;
+                    }
+        
+                    if (productSelect === "") {
+                        alert("You must select a product before submitting your feedback.");
+                        return;
+                    }
+                    
+                    if(current_star_level==0)
+                    {
+                        alert("You must rate the product by clicking the stars.");
+                        return;
+                    }
+                    if (current_star_level === 0) {
+                        alert("You must rate the product by clicking the stars.");
+                        return;
+                    }
+                    
+
+                    // If both are selected, display feedback message
+                    alert(`Thank you for your feedback! \nYou rating for product: ${productSelect} is ${current_star_level}`);
+                    window.open("HomePage.html");
+                };
+            } else {
+                console.error("Button with ID 'buttom1' not found.");
+            }
+        };
+
+        
+      
+        
+        </script>
+    </head>
+    <body onload="getSelectedV(); StarR();">
+        <header>
+            <div class="header-top">
+                <div class="logo-box">
+                    <img src="images/logo.jpeg"  alt="Logo">    
+                    <div class="header-title">
+                        <h1 style="text-align: left;">GOODS</h1> 
+                        <p><a href="HomePage.html">Home</a> / <a href="UserPage.html">User page</a> /  <a href="ProductEva.html">Product Evaluation</a></p> 
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="UserPage.html">User Page</a></li>
+                    <li><a href="SellerDashboard.html">Seller Page</a></li>
+                    <li><a href="Toy.html">Toys Page</a></li>
+                    <li><a href="Clothes.html">Clothes Page</a></li>
+                    <li><a href="electronics.html">Electronics Page</a></li>
+                    <li><a href="Cart.html">Cart</a></li>
+                </ul>
+            </nav>
+        </header>
+
+  <main id="section">
+    <h1 style="text-align: center; font-weight: bold; margin: 30px;font-size: xx-large;">Product Evaluation</h1>
+
+    <form action="" method="GET">
+      <div class="dropdown-container">
+        
+        <select id="selectOrder" onchange="getSelectedV(); " >
+          <option value="" disabled selected>Select an Order</option>
+          <option value="#112233">Order number:#112233</option>
+          <option value="#334455">Order number:#334455</option>
+          <option value="#667788">Order number:#667788</option>
+          <option value="#998877">Order number:#998877</option>
+          <option value="#336622">Order number:#336622</option>
+          
+        </select>
+        
+        <select id="selectProduct" onchange="getSelectedV();">
+          <option value="" disabled selected>Select a Product</option>
+          <option value="blue T-shirt">blue T-shirt</option>
+          <option value="Car toy">Car toy</option>
+          <option value="Sunglasses">Sunglasses</option>
+          <option value="Toaster">Toaster</option>
+          <option value="Shoes">Shoes</option>
+
+        </select>
+      </div>
+    </form>
+
+      
+   
+     <br><br> 
+
+      <form action="" method="GET">
+        <fieldset id="field">
+          
+         <legend style="text-indent: 50px;">Evaluate Product</legend>
+           <div class="h">
+               <div id="eve">
+               <div class="star-rating" >
+                <button class="star empty">&#9734;</button>
+                <button class="star empty">&#9734;</button>
+                <button class="star empty">&#9734;</button>
+                <button class="star empty">&#9734;</button>
+                <button class="star empty">&#9734;</button>
+               </div>
+                 <!--<img src="images/il_570xN.3946264554_a3qa.jpg.webp" alt="" class="star-rating">-->
+                  <div class="content-wrapper">
+                   <img src="images/t-shirt.webp" alt="blue t-shirt"   style="width:40% ;height:40% ;" id="img" >
+       
+
+                  <div class="product-details">
+                   <h1 style="text-align: left; " id="ON">Order Number: #112233</h1>
+                   <h2 style="color:rgb(70, 119, 168)" id="PN">Name:Blue t-shirt xs</h2>
+                   <h2 style="color:rgb(70, 119, 168)" id="price">Price:200 SR</h2>
+                    <h2 style="font-style: italic ; color:rgb(70, 119, 168)">Comment:</h2>
+                    
+                      <textarea rows="10" cols="50" id="textComment">Write your thoughts about the product</textarea>
+                      <input type="submit" id="buttom1" onclick="getSelectedV();">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </fieldset>
+                  
+              </form>
+
+    </main> 
+    <footer>
+      <div class="footer-container">
+          <div class="contact">
+              <p>Contact us:</p>
+              <p><a href="mailto:goodsonlineshopping@gmail.com">Email</a></p>
+              <p>Telephone: +966 0508833221</p>
+          </div>
+  
+          <div class="social-media">
+              <h2>Follow us on social media</h2>
+              <div class="footer-icons">
+                  <a href="https://www.facebook.com" target="_blank">
+                      <i class="fab fa-facebook"></i>
+                  </a>
+                  <a href="https://www.instagram.com" target="_blank">
+                      <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="https://www.youtube.com" target="_blank">
+                      <i class="fab fa-youtube"></i>
+                  </a>
+              </div>
+          </div>
+      </div>
+  
+      <div class="copyright">
+          <p>&copy; 2024 All Rights Reserved.</p>
+      </div>
+  </footer>
+
+</body>
+</html>

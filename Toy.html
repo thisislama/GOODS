@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toys</title>
+    <link rel="stylesheet" href="P.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body data-category="toys">
+
+    <header>
+        <div class="header-top">
+            <div class="logo-box">
+                <img src="images/logo.jpeg" alt="Logo"> 
+                <div class="header-title">
+                    <h1>GOODS</h1> 
+                    <p><a href="HomePage.html">Home</a> / <a href="Toys.html">Toys</a></p> 
+                </div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="UserPage.html">User Page</a></li>
+                <li><a href="SellerDashboard.html">Seller Page</a></li>
+                <li><a href="Toy.html">Toys Page</a></li>
+                <li><a href="Clothes.html">Clothes Page</a></li>
+                <li><a href="Electronics.html">Electronics Page</a></li>
+                <li><a href="Cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="banner">
+        <img src="images/toy.png" alt="Banner Image"> 
+    </div>
+
+    <section class="product-list">
+        <h2>All Products</h2>
+        
+        <div class="sort-by">
+            <label for="sort-options">Sort By:</label>
+            <select id="sort-options" onchange="sortProducts()">
+                <optgroup label="Price">
+                    <option value="high-to-low">High to Low</option>
+                    <option value="low-to-high">Low to High</option>
+                </optgroup>
+                <optgroup label="Name">
+                    <option value="a-to-z">A-Z</option>
+                    <option value="z-to-a">Z-A</option>
+                </optgroup>
+            </select>
+        </div>
+        
+       <div class="product-grid">
+    <!-- List of toy products -->
+    <div class="product" data-id="25" data-name="Toy Car" data-price="19.99">
+        <img src="images/RedCar.webp" alt="Toy Car">
+        <div class="product-info">
+            <h3>Race Car</h3>
+            <p class="price">$19.99</p>
+               <p>A fun and fast race car for kids to enjoy hours of play!</p>
+            <div class="quantity-controls">
+                <button onclick="decrementQuantity(this)">-</button>
+                <span class="quantity">1</span>
+                <button onclick="incrementQuantity(this)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product" data-id="26" data-name="Building Blocks" data-price="24.99">
+        <img src="images/Building.webp" alt="Building Blocks">
+        <div class="product-info">
+            <h3>Building Blocks</h3>
+            <p class="price">$24.99</p>
+              <p>Build anything you can imagine with these colorful building blocks!</p>
+            <div class="quantity-controls">
+                <button onclick="decrementQuantity(this)">-</button>
+                <span class="quantity">1</span>
+                <button onclick="incrementQuantity(this)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product" data-id="27" data-name="Dollhouse" data-price="59.99">
+        <img src="images/Dollhouse.webp" alt="Dollhouse">
+        <div class="product-info">
+            <h3>Dollhouse</h3>
+            <p class="price">$59.99</p>
+               <p>Create your own little world with this beautiful dollhouse!</p>
+            <div class="quantity-controls">
+                <button onclick="decrementQuantity(this)">-</button>
+                <span class="quantity">1</span>
+                <button onclick="incrementQuantity(this)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product" data-id="28" data-name="Action Figure" data-price="14.99">
+        <img src="images/ActionFigure.webp" alt="Action Figure">
+        <div class="product-info">
+            <h3>Action Figure</h3>
+            <p class="price">$14.99</p>
+            <p>This action figure is ready for any adventure you can imagine!</p>
+            <div class="quantity-controls">
+                <button onclick="decrementQuantity(this)">-</button>
+                <span class="quantity">1</span>
+                <button onclick="incrementQuantity(this)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product" data-id="29" data-name="Puzzle" data-price="12.99">
+        <img src="images/PuzzleGame.webp" alt="Puzzle">
+        <div class="product-info">
+            <h3>Puzzle Game</h3>
+            <p class="price">$12.99</p>
+               <p>Challenge your mind with this fun and exciting puzzle game!</p>
+            <div class="quantity-controls">
+                <button onclick="decrementQuantity(this)">-</button>
+                <span class="quantity">1</span>
+                <button onclick="incrementQuantity(this)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product" data-id="30" data-name="Teddy Bear" data-price="9.99">
+        <img src="images/Bear.webp" alt="Teddy Bear">
+        <div class="product-info">
+            <h3>Teddy Bear</h3>
+            <p class="price">$9.99</p>
+              <p>A cuddly and soft teddy bear perfect for snuggles!</p>
+            <div class="quantity-controls">
+                <button onclick="decrementQuantity(this)">-</button>
+                <span class="quantity">1</span>
+                <button onclick="incrementQuantity(this)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product" data-id="31" data-name="Remote Control Car" data-price="39.99">
+        <img src="images/RemoteControlCar.webp" alt="Remote Control Car">
+        <div class="product-info">
+            <h3>Remote Control Car</h3>
+            <p class="price">$39.99</p>
+               <p>Take control of this speedy remote control car for endless fun!</p>
+            <div class="quantity-controls">
+                <button onclick="decrementQuantity(this)">-</button>
+                <span class="quantity">1</span>
+                <button onclick="incrementQuantity(this)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product" data-id="32" data-name="Play-Doh Set" data-price="89.99">
+        <img src="images/Dollhouse.webp" alt="Play-Doh Set">
+        <div class="product-info">
+            <h3>Play-Doh Set</h3>
+				<p class="price">$89.99</p>
+      <p>Get creative with this colorful and fun Play-Doh set!</p>
+            <div class="quantity-controls">
+                <button onclick="decrementQuantity(this)">-</button>
+                <span class="quantity">1</span>
+                <button onclick="incrementQuantity(this)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product" data-id="33" data-name="Board Game" data-price="29.99">
+        <img src="images/BoardGame.webp" alt="Board Game">
+        <div class="product-info">
+            <h3>Board Game</h3>
+            <p class="price">$29.99</p>
+          <p>Enjoy quality time with family and friends with this exciting board game!</p>
+            <div class="quantity-controls">
+                <button onclick="decrementQuantity(this)">-</button>
+                <span class="quantity">1</span>
+                <button onclick="incrementQuantity(this)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product" data-id="34" data-name="Outdoor Play Set" data-price="89.99">
+        <img src="images/playset.webp" alt="Outdoor Play Set">
+        <div class="product-info">
+            <h3>Outdoor Play Set</h3>
+            <p class="price">$98.99</p>
+            <p>Perfect for outdoor fun, this play set provides hours of active entertainment!</p>
+            <div class="quantity-controls">
+                <button onclick="decrementQuantity(this)">-</button>
+                <span class="quantity">1</span>
+                <button onclick="incrementQuantity(this)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product" data-id="35" data-name="Train Set" data-price="59.99">
+        <img src="images/TrainSet.webp" alt="Train Set">
+        <div class="product-info">
+            <h3>Train Set</h3>
+            <p class="price">$59.99</p>
+              <p>Bring the magic of trains to life with this detailed train set!</p>
+            <div class="quantity-controls">
+                <button onclick="decrementQuantity(this)">-</button>
+                <span class="quantity">1</span>
+                <button onclick="incrementQuantity(this)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product" data-id="36" data-name="LEGO Set" data-price="39.99">
+        <img src="images/LEGOSet.webp" alt="LEGO Set">
+        <div class="product-info">
+            <h3>LEGO Set</h3>
+            <p class="price">$39.99</p>
+            <p>Build and create your own LEGO world with this versatile set!</p>
+            <div class="quantity-controls">
+                <button onclick="decrementQuantity(this)">-</button>
+                <span class="quantity">1</span>
+                <button onclick="incrementQuantity(this)">+</button>
+            </div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </section>
+ <footer>
+    <div class="footer-container">
+        <div class="contact">
+            <p>Contact us:</p>
+            <p><a href="mailto:goodsonlineshopping@gmail.com">Email</a></p>
+            <p>Telephone: +966 0508833221</p>
+        </div>
+
+        <div class="social-media">
+            <h2>Follow us on social media</h2>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>&copy;2024 All Rights Reserved.</p>
+    </div>
+</footer>
+<script src="ca.js"></script>
+
+</body>
+</html>

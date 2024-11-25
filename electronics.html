@@ -1,0 +1,272 @@
+
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics</title>
+    <link rel="stylesheet" href="P.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body data-category="electronics">
+
+    <header>
+        <div class="header-top">
+            <div class="logo-box">
+                <img src="images/logo.jpeg" alt="Logo"> 
+                <div class="header-title">
+                    <h1>GOODS</h1> 
+                    <p><a href="HomePage.html">Home</a> / <a href="Electronics.html">Electronics</a></p> 
+                </div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="UserPage.html">User Page</a></li>
+                <li><a href="SellerDashboard.html">Seller Page</a></li>
+                <li><a href="Toy.html">Toys Page</a></li>
+                <li><a href="Clothes.html">Clothes Page</a></li>
+                <li><a href="electronics.html">Electronics Page</a></li>
+                <li><a href="Cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="banner">
+        <img src="images/electronics.webp" alt="Banner Image"> 
+    </div>
+
+    <section class="product-list">
+        <h2>All Products</h2>
+        
+        <div class="sort-by">
+            <label for="sort-options">Sort By:</label>
+            <select id="sort-options" onchange="sortProducts()">
+                <optgroup label="Price">
+                    <option value="high-to-low">High to Low</option>
+                    <option value="low-to-high">Low to High</option>
+                </optgroup>
+                <optgroup label="Name">
+                    <option value="a-to-z">A-Z</option>
+                    <option value="z-to-a">Z-A</option>
+                </optgroup>
+            </select>
+        </div>
+        
+        <div class="product-grid">
+            <!-- List of all products -->
+            <div class="product" data-id="13" data-name="Power Bank" data-price="29.99">
+                <img src="images/powerbank.webp" alt="Power Bank">
+                <div class="product-info">
+                    <h3>Power Bank</h3>
+                    <p class="price">$29.99</p>
+                      <p>Portable power bank for charging your devices on the go, with a 10,000mAh capacity.</p>
+                    <div class="quantity-controls">
+                        <button onclick="decrementQuantity(this)">-</button>
+                        <span class="quantity">1</span>
+                        <button onclick="incrementQuantity(this)">+</button>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-id="14" data-name="Wireless Charger" data-price="19.99">
+                <img src="images/wireless.webp" alt="Wireless Charger">
+                <div class="product-info">
+                    <h3>Wireless Charger</h3>
+                    <p class="price">$19.99</p>
+                      <p>A sleek and efficient wireless charger for fast charging your smartphone and other devices.</p>
+                    <div class="quantity-controls">
+                        <button onclick="decrementQuantity(this)">-</button>
+                        <span class="quantity">1</span>
+                        <button onclick="incrementQuantity(this)">+</button>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-id="15" data-name="Smartphone" data-price="699.99">
+                <img src="images/Smartphone.webp" alt="Smartphone">
+                <div class="product-info">
+                    <h3>Smartphone</h3>
+                    <p class="price">$699.99</p>
+                      <p>High-performance smartphone with a 6.5-inch display, 128GB storage, and a 48MP camera.</p>
+                    <div class="quantity-controls">
+                        <button onclick="decrementQuantity(this)">-</button>
+                        <span class="quantity">1</span>
+                        <button onclick="incrementQuantity(this)">+</button>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-id="16" data-name="Laptop" data-price="999.99">
+                <img src="images/laptop.webp" alt="Laptop">
+                <div class="product-info">
+                    <h3>Laptop</h3>
+                    <p class="price">$999.99</p>
+                      <p>>A lightweight laptop with a 15-inch display, 8GB RAM, and 512GB SSD for fast performance.</p>
+                    <div class="quantity-controls">
+                        <button onclick="decrementQuantity(this)">-</button>
+                        <span class="quantity">1</span>
+                        <button onclick="incrementQuantity(this)">+</button>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-id="17" data-name="Tablet" data-price="399.99">
+                <img src="images/tablet.webp" alt="Tablet">
+                <div class="product-info">
+                    <h3>Tablet</h3>
+                    <p class="price">$399.99</p>
+                      <p>10-inch tablet with a high-resolution display, perfect for reading, browsing, and watching videos.</p>
+                    <div class="quantity-controls">
+                        <button onclick="decrementQuantity(this)">-</button>
+                        <span class="quantity">1</span>
+                        <button onclick="incrementQuantity(this)">+</button>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-id="18" data-name="Wireless Headphones" data-price="89.99">
+                <img src="images/headphones.webp" alt="Wireless Headphones">
+                <div class="product-info">
+                    <h3>Wireless Headphones</h3>
+                    <p class="price">$89.99</p>
+                     <p>Comfortable wireless headphones with noise-cancellation and 20 hours of playtime.</p>
+                    <div class="quantity-controls">
+                        <button onclick="decrementQuantity(this)">-</button>
+                        <span class="quantity">1</span>
+                        <button onclick="incrementQuantity(this)">+</button>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-id="19" data-name="Smartwatch" data-price="199.99">
+                <img src="images/smartwatch.webp" alt="Smartwatch">
+                <div class="product-info">
+                    <h3>Smartwatch</h3>
+                    <p class="price">$199.99</p>
+                      <p>Stylish smartwatch with fitness tracking, heart rate monitoring, and customizable watch faces.</p>
+                    <div class="quantity-controls">
+                        <button onclick="decrementQuantity(this)">-</button>
+                        <span class="quantity">1</span>
+                        <button onclick="incrementQuantity(this)">+</button>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-id="20" data-name="Digital Camera" data-price="499.99">
+                <img src="images/camera.webp" alt="Digital Camera">
+                <div class="product-info">
+                    <h3>Digital Camera</h3>
+                    <p class="price">$499.99</p>
+                       <p>Compact digital camera with 20MP resolution, 4K video recording, and fast autofocus.</p>
+                    <div class="quantity-controls">
+                        <button onclick="decrementQuantity(this)">-</button>
+                        <span class="quantity">1</span>
+                        <button onclick="incrementQuantity(this)">+</button>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-id="21" data-name="Smart TV" data-price="799.99">
+                <img src="images/TV.webp" alt="Smart TV">
+                <div class="product-info">
+                    <h3>Smart TV</h3>
+                    <p class="price">$799.99</p>
+                     <p>55-inch 4K smart TV with built-in WiFi, streaming apps, and crystal-clear display.</p>
+                    <div class="quantity-controls">
+                        <button onclick="decrementQuantity(this)">-</button>
+                        <span class="quantity">1</span>
+                        <button onclick="incrementQuantity(this)">+</button>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+			
+
+            <div class="product" data-id="22" data-name="Bluetooth Speaker" data-price="39.99">
+                <img src="images/speakers.webp" alt="Bluetooth Speaker">
+                <div class="product-info">
+                    <h3>Bluetooth Speaker</h3>
+                    <p class="price">$39.99</p>
+                       <p>Portable Bluetooth speaker with 360° sound and a 12-hour battery life for outdoor fun.</p>
+                    <div class="quantity-controls">
+                        <button onclick="decrementQuantity(this)">-</button>
+                        <span class="quantity">1</span>
+                        <button onclick="incrementQuantity(this)">+</button>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-id="23" data-name="WiFi Router" data-price="129.99">
+                <img src="images/router.webp" alt="WiFi Router">
+                <div class="product-info">
+                    <h3>WiFi Router</h3>
+                    <p class="price">$129.99</p>
+                       <p>Fast and reliable WiFi router for seamless connectivity at home.</p>
+                    <div class="quantity-controls">
+                        <button onclick="decrementQuantity(this)">-</button>
+                        <span class="quantity">1</span>
+                        <button onclick="incrementQuantity(this)">+</button>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-id="24" data-name="Gaming Console" data-price="59.99">
+                <img src="images/gaming.webp" alt="Gaming Console">
+                <div class="product-info">
+                    <h3>Gaming Console</h3>
+                    <p class="price">$59.99</p>
+                     <p>Next-gen gaming console for the ultimate gaming experience.</p>
+                    <div class="quantity-controls">
+                        <button onclick="decrementQuantity(this)">-</button>
+                        <span class="quantity">1</span>
+                        <button onclick="incrementQuantity(this)">+</button>
+                    </div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+    
+        </div>
+    </section>
+
+     <footer>
+    <div class="footer-container">
+        <div class="contact">
+            <p>Contact us:</p>
+            <p><a href="mailto:goodsonlineshopping@gmail.com">Email</a></p>
+            <p>Telephone: +966 0508833221</p>
+        </div>
+
+        <div class="social-media">
+            <h2>Follow us on social media</h2>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>&copy;2024 All Rights Reserved.</p>
+    </div>
+</footer>
+<script src="ca.js"></script>
+
+</body>
+</html>

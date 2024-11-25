@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard</title>
+    <link rel="stylesheet" href="P.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-box">
+                <img src="images/logo.jpeg" alt="Logo">
+                <div class="header-title">
+                    <h1>GOODS</h1>
+                    <p><a href="HomePage.html">Home</a> /<a href="SellerDashboard.html">Seller Dashboard</a> </p>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="UserPage.html">User Page</a></li>
+                <li><a href="SellerDashboard.html">Seller Page</a></li>
+               <li><a href="Toy.html">Toys Page</a></li>
+               <li><a href="Clothes.html">Clothes Page</a></li>
+               <li><a href="electronics.html">Electronics Page</a></li>
+               <li><a href="Cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   <div class="product-actions">
+    <a href="AddProudct.html"><button>Add Product</button></a>
+    <a href="OffersPage.html"><button>Offer Page</button></a>
+</div>
+
+    <section class="product-list">
+        <h2>All Products</h2>
+        
+        <div class="scroll-container">
+
+
+            <div class="product">
+                <img src="images/RedCar.webp" alt="Toy Car">
+                <h3>Race Car</h3>
+                <p>Speed through the finish line with this fast and fun race car toy.</p>
+            </div>
+
+            <div class="product">
+                <img src="images/powerbank.webp" alt="Power Bank">
+                <h3>Power Bank</h3>
+                <p>Modern and portable power bank with multiple USB ports, perfect for charging devices on the go.</p>
+            </div>
+
+            <div class="product">
+                <img src="images/jeans.webp" alt="Blue Jeans">
+                <h3>Classic Blue Jeans</h3>
+                <p>Durable denim jeans with a classic cut for all-day comfort.</p>
+            </div>
+
+            <div class="product">
+                <img src="images/wireless.webp" alt="Wireless Charger">
+                <h3>Wireless Charger</h3>
+                <p>Compact wireless charger designed for fast charging, with sleek, minimalistic design.</p>
+            </div>
+
+            <div class="product">
+                <img src="images/Smartphone.webp" alt="Smartphone">
+                <h3>Smartphone</h3>
+                <p>High-performance smartphone with an edge-to-edge display and advanced features.</p>
+            </div>
+
+            <div class="product">
+                <img src="images/dress.webp" alt="Floral Dress">
+                <h3>Floral Dress</h3>
+                <p>Beautiful floral dress, perfect for a casual outing or a summer day.</p>
+            </div>
+
+            <div class="product">
+                <img src="images/Bear.webp" alt="Teddy Bear">
+                <h3>Teddy Bear</h3>
+                <p>Cuddle up with this soft and adorable teddy bear companion.</p>
+            </div>
+
+            <div class="product">
+                <img src="images/blazer.webp" alt="Blazer">
+                <h3>Business Blazer</h3>
+                <p>Smart and sleek blazer, perfect for professional and formal wear.</p>
+            </div>
+       
+        </div>
+    </section>
+
+<footer>
+    <div class="footer-container">
+        <div class="contact">
+            <p>Contact us:</p>
+            <p><a href="mailto:goodsonlineshopping@gmail.com">Email</a></p>
+            <p>Telephone: +966 0508833221</p>
+        </div>
+
+        <div class="social-media">
+            <h2>Follow us on social media</h2>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>&copy;2024 All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script src="Scrip.js"></script>
+
+<script src="SD.js"></script>
+<script>
+    let parent = document.querySelector(".product-list .scroll-container");
+    let children = document.querySelectorAll(".product-list .product");
+    
+    children.forEach(child => {
+        parent.removeChild(child);
+    });
+</script>
+
+</body>
+</html>
