@@ -1,75 +1,4 @@
 
-        
-      
-        
-
-        function addOffer()
-        {
-            var addOffer = document.getElementById("Add-Offer");
-
-            addOffer.onclick= function(){
-            event.preventDefault();
-            var productNameInput = document.querySelector("input[name='productname']");
-            var descriptionInput = document.querySelector("input[name='description']");
-            var fileInput = document.querySelector("input[type='file']");
-            var errors=[];
-            if(!productNameInput.value)
-                errors.push("You have to enter a product name");
-            else if(!productNameInput.value.match(/^[A-Za-z_0-9]+$/))
-                errors.push("Product Name can only contain letters, numbers, and spaces.");
-
-            if(!descriptionInput.value)
-                errors.push("Description is required");
-            else if(descriptionInput.value.length<10)
-                errors.push("Description must be at least 10 characters long.");
-
-            if (!fileInput.value) {
-                errors.push("You must upload a photo.");
-            }
-            if (errors.length > 0) {
-                for (let i = 0; i < errors.length; i++) {
-                    alert(errors[i]);} 
-            } else {
-                var offerList = document.querySelector(".offer-list");
-				var newOffer = document.createElement("div");
-				newOffer.className = "offer";
-				
-				var offerDetails = document.createElement("div");
-				offerDetails.className = "offer-details";
-				var offerTitle = document.createElement("h3");
-				offerTitle.textContent = productNameInput.value;
-				var offerDescription = document.createElement("p");
-				offerDescription.textContent = descriptionInput.value;
-				
-				var checkbox = document.createElement("input");
-				checkbox.type = "checkbox";
-				checkbox.className = "delete-cb";
-				
-				var offerImage = document.createElement("img");
-				//offerImage.src = "images/placeholder.jpg";
-				try{
-				offerImage.src = URL.createObjectURL(fileInput.files[0]);
-				offerImage.alt = "Offer Photo";
-				}catch (e){
-					console.error("Error loading image", e);
-					offerImage.src = "images/placeholder.jpg";
-				}
-				
-				offerDetails.appendChild(offerTitle);
-				offerDetails.appendChild(offerDescription);
-				newOffer.appendChild(checkbox);
-				newOffer.appendChild(offerImage);
-				newOffer.appendChild(offerDetails);
-				offerList.appendChild(newOffer);
-				
-				productNameInput.value = "";
-				descriptionInput.value = "";
-				fileInput.value = "";
-            }
-
-            };
-        };
-		
 		
 		
 function toggleDarkMode() {
@@ -86,26 +15,27 @@ function loadDarkModePreference() {
 };
 document.addEventListener('DOMContentLoaded', loadDarkModePreference);
 
-/////////////////////////////////////////////////////////////////////////////////////////////
+const currentWeekElement = document.querySelector('.current-week');
+const currentDate = new Date();
+const dayOfWeek = currentDate.getDay(); // 0 for Sunday, 1 for Monday, etc.
+const sundayDate = new Date(currentDate);
+sundayDate.setDate(currentDate.getDate() - dayOfWeek); // Set to the most recent Sunday
 
-function displayCurrentWeek() {
-    const today = new Date();
-    const firstDayOfWeek = new Date(today.setDate(today.getDate() - today.getDay()));
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    document.querySelector(".current-week").textContent = 
-        `Week Started At:  ${firstDayOfWeek.toLocaleDateString(undefined, options)}`;
-};
+// Format the date to "7 February"
+const options = { day: 'numeric', month: 'long' };
+const formattedDate = sundayDate.toLocaleDateString('en-US', options);
+currentWeekElement.innerHTML = `This week starts at Sunday, ${formattedDate}`;
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 function toggleOffers() {
     const hiddenOffers = document.querySelectorAll(".offerHome.hidden");
+	const shouldShow = hiddenOffers[0]?.classList.contains("hidden");
     hiddenOffers.forEach(offer => {
-        offer.classList.toggle("hidden");
+        offer.classList.toggle("hidden", !shouldShow);
     });
-    const moreButton = document.getElementById("more-button");
-    moreButton.textContent = 
-        moreButton.textContent === "More Offers" ? "Show Less" : "More Offers";
+
+        moreButton.textContent = shouldShow ? "Show Less" : "More Offers";
 };
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -135,9 +65,7 @@ function addReviewHoverEffect() {
 
 
 window.onload = function() {
-    displayCurrentWeek();
     addReviewHoverEffect();
-    document.getElementById("more-button").addEventListener("click", toggleOffers);
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -152,7 +80,6 @@ function showMoreOffers() {
     moreOffersBtn.style.display = "none";
 };
 
-document.getElementById("moreOffersBtn").addEventListener("click", showMoreOffers);
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
